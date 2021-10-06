@@ -31,5 +31,4 @@ def search_resources():
     if 'pubs' in databases: search_pubs()
 
 
-
     print("completed search_resources")

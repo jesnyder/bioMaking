@@ -4,6 +4,7 @@ import numpy as np
 import pandas as pd
 
 from c0100_search_resources import search_resources
+from c0200_html_build import html_build
 
 def main():
     """
@@ -11,12 +12,7 @@ def main():
 
     Tasks to complete:
     1. Search for relevant publications
-    2. Find the latitude and longitude of author affiliations
-    3. Aggregate information
-    4. Make plot as .png
-    5. Make .gif
-    6. Make .mp4
-    7. Summarize aggregated information
+    2. Build html
 
     """
 
@@ -25,10 +21,13 @@ def main():
     # Review the note above
     # Identify which tasks need to be run
     # List the task numbers that need to be run below
-    tasks = [1]
+    tasks = [2]
 
     if 1 in tasks: search_resources()
-    
+    if 2 in tasks: html_build()
+
+
+
     print("completed main")
 
 if __name__ == "__main__":
