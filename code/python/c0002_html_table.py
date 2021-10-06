@@ -18,6 +18,18 @@ def html_table():
 
             patent_file = os.path.join(patent_path, file)
             print(patent_file)
+            df = pd.read_csv(patent_file)
+            del df['Unnamed: 0']
+            del df['description']
+            del df['claims']
+            del df['abstract']
+            del df['inventors']
+            del df['url']
+
+            html_code = df.to_html()
+
+
+            """
 
             x = PrettyTable()
 
@@ -29,12 +41,15 @@ def html_table():
                 x.add_row([line_split[0], line_split[1], line_split[3]])
 
             html_code = x.get_html_string()
+            """
 
             html_path = os.path.join('code')
             if not os.path.isdir(html_path): os.mkdir(html_path)
             html_path = os.path.join('code', 'html')
             if not os.path.isdir(html_path): os.mkdir(html_path)
             html_file = os.path.join(html_path, 'table_' + 'patents' + '.html')
+
+
 
             with open(html_file, 'w') as myFile:
                 myFile.write('<html>')
