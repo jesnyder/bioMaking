@@ -24,9 +24,9 @@ def html_table():
             del df['claims']
             del df['abstract']
             del df['inventors']
-            del df['url']
+            # del df['url']
 
-            html_code = df.to_html()
+            html_code = df.to_html(render_links=True)
 
 
             """
