@@ -1,56 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>SynBio</title>
-    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-    <link rel='stylesheet' href='style.css'>
-</head>
-
+<html>
+<head><title>Reading values into a table</title></head>
 <body>
 
-  <div id="chartDiv" style="width:80%; height:100px; margin:0 auto;">
-    <h1> <center> Synthetic Biology: Who? What? Where? </center> </h1>
-    <center>
-  </div>
+<table datasrc='#data'>
 
-  <div id="chartDiv" style="width:65%; height:80px; margin:0 auto;">
-    <p>Who patents synbio?
-      Let's scrape the US Patent and Trademark Office. </br>
+  <thead>
+     <tr><th>Number</th><th>English</th><th>French</th><th>German</th></tr>
+  </thead>
 
-    </center>
-  </div>
+  <tbody> <tr>
+     <td><span datafld='number'> </span></td>
+     <td><span datafld='english'></span></td>
+     <td><span datafld='french'> </span></td>
+     <td><span datafld='german'> </span></td>
+  </tbody>
 
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.1.2/papaparse.js"></script>
-  <script>
-    function arrayToTable(tableData) {
-        var table = $('<table></table>');
-        $(tableData).each(function (i, rowData) {
-            var row = $('<tr></tr>');
-            $(rowData).each(function (j, cellData) {
-                row.append($('<td>'+cellData+'</td>'));
-            });
-            table.append(row);
-        });
-        return table;
-    }
+</table>
 
-    $.ajax({
-        type: "GET",
-        url: "https://raw.githubusercontent.com/jesnyder/bioMaking/main/searchResults/patents/patentssynbio.csv",
-        success: function (data) {
-            $('body').append(arrayToTable(Papa.parse(data).data));
-        }
-    });
-</script>
+data_url = ""
+<object ID=data classid="clsid:333C7BC4-460F-11D0-BC04-0080C7055A83">
+  <param nAme="DataURL" value="data.csv">
+  <param nAme="UseHeader" value="true">
+</object>
 
- 
 </body>
-
-
-<script src="https://code.jscharting.com/2.9.0/jscharting.js"></script>
-
-
-
 </html>

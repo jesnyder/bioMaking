@@ -65,7 +65,7 @@ def query_USPTO(searchName, searchTerms, df):
     if not os.path.isdir(patent_path): os.mkdir(patent_path)
     patent_path = os.path.join('searchResults', 'patents')
     if not os.path.isdir(patent_path): os.mkdir(patent_path)
-    patent_file = os.path.join(patent_path, 'patents_' + 'synbio' + '.csv')
+    patent_file = os.path.join(patent_path, 'patents_' + term + '.csv')
     df.to_csv(patent_file)
     print('patentsRetrieved saved: ' + patent_file)
 
